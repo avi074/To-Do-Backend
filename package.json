@@ -1,0 +1,27 @@
+{
+  "name": "to-do-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Avinash Gautam",
+  "license": "MIT",
+  "repository": {
+    "url": "git+https://github.com/avi074/To-Do-Backend",
+    "type": "git"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.3",
+    "@types/sqlite3": "^3.1.11",
+    "typescript": "^5.7.2"
+  }
+}
