@@ -1,14 +1,16 @@
-import sqlite3 from 'sqlite3'
+import sqlite3 from 'sqlite3';
+import logger from './logger';
 
-export const db = new sqlite3.Database('../db/tasks.db', (err) => {
+// For memory->		:memory:
+export const db = new sqlite3.Database('./tasks.db', (err) => {
 	if (err) {
-		console.error('Failed to connect to the database:', err)
+		logger.error(`Failed to connect to the database: ${err}`);
 	} else {
-		console.log('Connected to the SQLite database.')
+		logger.info('Connected to SQLite...');
 	}
-})
+});
 
-export const connectDb = () => {
+export const connectDB = () => {
 	db.serialize(() => {
 		db.run(`
         CREATE TABLE IF NOT EXISTS tasks (
@@ -17,6 +19,6 @@ export const connectDb = () => {
           description TEXT,
           status TEXT CHECK(status IN ('pending', 'in-progress', 'completed')) DEFAULT 'pending'
         )
-      `)
-	})
-}
+      `);
+	});
+};
