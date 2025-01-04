@@ -16,7 +16,7 @@ app.use(logReqRes);
 app.use('/api/tasks', taskRouter);
 
 app.listen(PORT, () => {
-    logger.info('Connected to Server...');
+    logger.info(`Connected to Server at http://localhost:${PORT}`);
 });
 
 connectDB();

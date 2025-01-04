@@ -1,6 +1,6 @@
 # To-Do-Backend
 
-A backend server created for To-Do List management.
+A backend server created for To-Do List management using express & typescript.
 
 ## Prerequisites
 
@@ -55,6 +55,45 @@ npm run convert
 - `db.ts` : sqlite db config file
 
 - `logger.ts` : custom logger
+
+## Screenshots
+
+### POST REQUESTS 
+
+- Task 1 added
+![post 1](./screenshots/post%201.png)
+
+- Task 2 added
+![post2](./screenshots/post%202.png)
+
+- Task 3 added
+![post 3](./screenshots/post%203.png)
+
+### GET REQUESTS 
+
+- All tasks fetched
+![get all](./screenshots/get%20all.png)
+
+- Bad request handled on wrong id
+![error 400](./screenshots/get%20error%20400.png)
+
+- Out of the bounds error handled
+![error 404](./screenshots/get%20error%20404.png)
+
+- Fetched task by id
+![task 1](./screenshots/get%20one.png)
+
+#### PUT REQUEST
+
+- Updated status of task 1
+![status update](./screenshots/put%201.png)
+![task 1 after put](./screenshots/put%201%20get.png)
+
+#### DELETE REQUEST
+
+- Deleted task 1
+![task delete](./screenshots/delete%201.png)
+![tasks after delete](./screenshots/delete%20get%20all.png)
 
 ## Contributing
 

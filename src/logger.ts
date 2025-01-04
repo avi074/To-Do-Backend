@@ -1,11 +1,9 @@
-import chalk from "chalk";
-
 /**
  * consoles the message with date
  */
 const showMessage = (msg: string, newLine: boolean) => {
     console.log(
-        chalk.bold(`${newLine ? "\n" : ""}[${chalk.italic.blackBright(new Date().toLocaleTimeString())}] ${msg}`)
+        `\x1b[1m${newLine ? "\n" : ""}\x1b[47m[${new Date().toLocaleTimeString()}]\x1b[0m \x1b[1m ${msg} \x1b[0m`
     );
 };
 
@@ -15,19 +13,19 @@ const showMessage = (msg: string, newLine: boolean) => {
 const logger = {
 
     info: (message: string, newLine: boolean = false) => {
-        showMessage(chalk.blueBright(`[INFO] ${message}`), newLine);
+        showMessage(`\x1b[36m[INFO] ${message} \x1b[0m`, newLine);
     },
 
     success: (message: string, newLine: boolean = false) => {
-        showMessage(chalk.green(`[SUCCESS] ${message}`), newLine);
+        showMessage(`\x1b[32m[SUCCESS] ${message} \x1b[0m`, newLine);
     },
 
     error: (message: string, newLine: boolean = false) => {
-        showMessage(chalk.red(`[ERROR] ${message}`), newLine);
+        showMessage(`\x1b[31m[ERROR] ${message} \x1b[0m`, newLine);
     },
 
     warn: (message: string, newLine: boolean = false) => {
-        showMessage(chalk.yellowBright(`[WARN] ${message}`), newLine);
+        showMessage(`\x1b[33m[WARN] ${message} \x1b[0m`, newLine);
     },
 
     log: (message: string, newLine: boolean = false) => {
